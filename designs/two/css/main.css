@@ -1,0 +1,106 @@
+@keyframes timer {
+	from {
+		rotate: 90deg;
+	}
+	to {
+		rotate: 450deg;
+	}
+}
+@keyframes change-color {
+	from {
+		background-color: red;
+	}
+	to {
+		background-color: green;
+	}
+}
+
+.perfect-center {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+}
+
+body {
+	height: 97.58vh;
+	--timer-dimension: 55vmin;
+	--interfaces-width: 35%;
+	--duration-width: 35%;
+	--duration-width-decimal: 0.15;
+}
+
+#timer-container {
+	height: calc(var(--timer-dimension) + 36px);
+	width: calc(var(--timer-dimension) + 36px);
+}
+
+#timer {
+	width: var(--timer-dimension);
+	height: var(--timer-dimension);
+	border: 3px solid black;
+	border-radius: calc(var(--timer-dimension) / 2);
+}
+
+#button-container {
+	display: flex;
+	justify-content: space-between;
+	width: var(--interfaces-width);
+	margin-top: 10px;
+}
+
+button {
+	width: 48.5%;
+	padding: 0px;
+	border: 1px solid darkblue;
+	border-radius: 7.5vmin;
+	background-color: white;
+	transition: 600ms linear;
+	z-index: 1;
+}
+
+button:hover {
+	background-color: darkblue;
+	color: white;
+	border-radius: 2.8vmin;
+	transition: 600ms linear;
+}
+
+#duration {
+	width: var(--duration-width);
+	height: calc(var(--duration-width-decimal) * var(--timer-dimension));
+	margin-left: calc((100% - var(--duration-width)) / 2);
+	border: 2px solid black;
+	border-radius: 3vmin;
+	padding: 0px;
+	font: 7vmin Segoe UI;
+	text-align: center;
+	position: relative;
+	z-index: 1;
+}
+
+#countdown-tracker {
+	display: flex;
+	align-items: center;
+	position: absolute;
+	rotate: 90deg;
+}
+
+.timer-bulb {
+	width: 40px;
+	height: 40px;
+	border-radius: 25px;
+	background-color: red;
+	border: 2px solid black;
+	z-index: 1;
+}
+
+.bulb-connector {
+	width: calc(var(--timer-dimension) - 44px);
+	height: 0px;
+	border: 1px solid black;
+	opacity: 0;
+}
+.timer-bulb.two {
+	opacity: 0;
+}
